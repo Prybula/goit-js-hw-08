@@ -7,15 +7,14 @@ const player = new Player(iframe);
 
 player.on('timeupdate', throttle(setLocalStorageTime, 1000));
 
-player.setCurrentTime(getLocalStorageTime())
-    .catch(error => {
-        console.log(`Error: ${error.name}`)
-    });
+player.setCurrentTime(getLocalStorageTime());
 
 function setLocalStorageTime(event) {
     localStorage.setItem("videoplayer-current-time", `${event.seconds}`);
 }
 
 function getLocalStorageTime() {
-    return localStorage.getItem("videoplayer-current-time");
+    if (getLocalStorageTime !== null) {
+        return localStorage.getItem("videoplayer-current-time");
+    } return getLocalStorageTime = 0;
 }
