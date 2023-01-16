@@ -14,7 +14,5 @@ function setLocalStorageTime(event) {
 }
 
 function getLocalStorageTime() {
-    if (getLocalStorageTime !== null) {
-        return localStorage.getItem("videoplayer-current-time");
-    } return getLocalStorageTime = 0;
+    return localStorage.getItem("videoplayer-current-time") || 0;
 }
